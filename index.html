@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-------------------------------------------------FONTS------------------------------------------------------------------>    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="website icon" type="png" href="..\img\newLogo-nb.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-------------------------------------------------LINKS------------------------------------------------------------------>      
+<link rel="stylesheet" href="styles.css">  
+
+<!-----------------------------------------WEBSITE-------TITLE------------------------------------------------------------>    
+<title>Álvaro's Portfolio</title>
+</head>
+<!-------------------------------------------------NAV-BAR---------------------------------------------------------------->    
+<body>
+
+<nav id="nav">
+    <div class="navbar__nav">
+      <div class="navbar__container">
+        <div class="navbar__row">
+          <div class="navbar__logo">
+            <a href="/index.php"><img src="img/newLogo.jpg" alt="Álvaro's Logo"/></a>
+          </div>
+          
+          <div class="navbar__listItem">
+            <ul>
+              <li class="item"><a href="/jquery.php">JQuery</a></li>
+              <li class="item"><a href="/reproductorVideo.php">Videos</a></li>
+              <li class="item"><a href="/indexDB.php">IndexDB</a></li>
+              <li class="item"><a href="/preferencias.php">Preferencias</a></li>
+              <li class="item"><a href="/basura.php">Tabla</a></li>  
+              <li class="item"><a href="/index.php">Home</a></li>
+              <li class="item"><a href="/about.php">About</a></li>
+              <li class="item"><a href="/services.php">What I Do</a></li>
+              <li class="item"><a href="/summary.php">Resume</a></li>
+              <li class="item"><a href="/portfolio.php">Portfolio</a></li>
+              <li class="item"><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <div class="videoplayer">
+       <!-- Sección del reproductor de video -->
+      <video id="videoPlayer" src="videos/Bleed - The Kid Laroi.mp4" controls style="max-width: 250%; max-height: 100%;">
+        
+        Tu navegador no soporta el elemento de video.
+      </video>
+      
+      <!-- Sección del reproductor de audio -->
+      <audio id="audioPlayer" src="audios/Alex Warren - Before You Leave Me.mp3" controls style="">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+      
+      <!-- Controles del reproductor -->
+      <div class="video-controls">
+        <!-- Botones de control -->
+        <button class="botRep" onclick="playPause()">▶ </button>
+        <button class="botRep" onclick="stop()">Stop</button>
+        <button class="botRep" onclick="rewind()">-10s</button>
+        <button class="botRep" onclick="forward()">+10s</button>
+        <button class="botRep" onclick="goToStart()">Inicio</button>
+        <button class="botRep" onclick="goToEnd()">Fin</button>
+        <button class="botRep" onclick="toggleFullScreen()">FullScreen</button>
+        
+        <!-- Control de volumen -->
+        - Volumen +<input class="barravolumen" type="range" id="volumeControl" min="0" max="1" step="0.1" onchange="changeVolume()">
+      </div>
+      
+      <!-- Barra de progreso -->
+      <div>
+        <progress id="progressBar" max="100" value="0"></progress>
+      </div>
+      
+      <!-- Selección de playlist -->
+      <div>
+        
+          <!-- Opciones de la playlist -->
+          <a onclick=bleed()>Bleed</a>
+          <a onclick=tear()>Tear Me Apart</a>
+          <a onclick=heaven()>Heaven</a>
+          <a onclick=tooMuch()>Too Much</a>
+    -----------------------------------------------
+          <a onclick=alex()>Before You Leave Me</a>
+      </div> 
+    </div>
+    
+    <!-- Script para controlar el reproductor -->
+    <script src="reproductor.js"></script>
